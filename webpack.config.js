@@ -1,4 +1,4 @@
-//var path = require("path");
+var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
@@ -12,7 +12,15 @@ module.exports = {
 		filename: "[name].bundle.js",
 		chunkFilename: "[chunkhash].js"
 	},
-	module: {},
+	module: {
+		loaders: [{
+			exclude: /(node_modules|bower_components)/,
+			loader: 'babel',
+			query: {
+				presets: ['es2015']
+			}
+		}]
+	},
 	resolve: {},
-	plugins: []
+	plugins: [],
 };

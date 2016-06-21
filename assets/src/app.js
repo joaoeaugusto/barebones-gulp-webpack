@@ -1,4 +1,5 @@
 'use strict';
 
-require('./modules/module-one');
-require('./modules/module-two');
+require('./modules/foo');
+require('./modules/bar');
+require('./modules/baz');
